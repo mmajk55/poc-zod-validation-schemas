@@ -1,8 +1,11 @@
 name: Release Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
 
 jobs:
   build:
@@ -12,7 +15,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm ci
       - run: npm run build
 
   publish-gpr:
@@ -27,7 +29,6 @@ jobs:
         with:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
       - run: npm run build
       - run: npm publish
         env:
