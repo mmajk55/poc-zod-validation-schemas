@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { businessDetailsSchema } from "./business-details";
+import { businessDetailsSchema, BusinessDetails } from "./business-details";
 import { companySchema } from "./company-details";
 import * as shared from "./shared";
 
@@ -81,4 +81,4 @@ const exampleData = {
   },
 };
 
-export { shared, combinedSchema, exampleData };
+export { shared, combinedSchema, exampleData, BusinessDetails };

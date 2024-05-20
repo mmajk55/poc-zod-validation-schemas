@@ -32,3 +32,5 @@ export const businessDetailsSchema = z
       });
     }
   });
+
+export type BusinessDetails = z.infer<typeof businessDetailsSchema>;
