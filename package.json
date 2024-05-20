@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "exit 0",
-    "build": "npx tsc"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
