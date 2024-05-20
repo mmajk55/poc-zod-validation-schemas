@@ -1,9 +1,10 @@
 {
   "name": "@mmajk55/poc-zod-validation-schemas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "main": "index.js",
+  "module": "./dist/index.js",
   "publishConfig": {
     "gh-username:registry": "https://npm.pkg.github.com"
   },
