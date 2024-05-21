@@ -1,6 +1,6 @@
 {
   "name": "@mmajk55/poc-zod-validation-schemas",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,6 +17,9 @@
   "devDependencies": {
     "typescript": "^5.4.5"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "zod": "^3.23.8"
   }

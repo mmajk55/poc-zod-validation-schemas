@@ -1,11 +1,11 @@
 import { z } from "zod";
-import { businessDetailsSchema, BusinessDetails } from "./business-details";
+import * as BusinessDetails from "./business-details";
 import { companySchema } from "./company-details";
 import * as shared from "./shared";
 
 const combinedSchema = z
   .object({
-    business_details: businessDetailsSchema,
+    business_details: BusinessDetails.businessDetailsSchema,
     company_details: companySchema,
   })
   .superRefine((data, ctx) => {
