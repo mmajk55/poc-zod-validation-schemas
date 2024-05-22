@@ -10,16 +10,23 @@
   },
   "scripts": {
     "test": "exit 0",
-    "build": "tsc"
+    "build": "tsc",
+    "release": "standard-version"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "standard-version": "^9.5.0",
     "typescript": "^5.4.5"
   },
   "files": [
     "dist"
   ],
+  "standard-version": {
+    "scripts": {
+      "postbump": "git add package.json && git commit -m 'chore(release): bump version'"
+    }
+  },
   "dependencies": {
     "zod": "^3.23.8"
   }
