@@ -29,5 +29,9 @@
   },
   "dependencies": {
     "zod": "^3.23.8"
+  },
+  "exports": {
+    "./schemas": "./dist/schemas/index.js",
+    "./utils": "./dist/utils/index.js"
   }
 }
