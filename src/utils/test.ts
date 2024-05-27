@@ -1,1 +1,1 @@
-const test = () => console.log("first");
+export const test = () => console.log("first");
