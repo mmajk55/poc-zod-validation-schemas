@@ -1,2 +1,8 @@
+# macOS
+.DS_Store
+
 /dist
 /node_modules
+
+# Declarations folder
+declarations/
