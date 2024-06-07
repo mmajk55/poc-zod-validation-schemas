@@ -11,21 +11,21 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: {
-        schemas: resolve(__dirname, "src/schemas/index.ts.ts"),
-        utils: resolve(__dirname, "src/utils/index.ts"),
-      },
-    },
-    rollupOptions: {
-      input: {
         schemas: resolve(__dirname, "src/schemas/index.ts"),
         utils: resolve(__dirname, "src/utils/index.ts"),
       },
+      formats: ["es"],
+    },
+    rollupOptions: {
+      external: ["zod"],
       output: {
+        dir: "dist",
+        entryFileNames: "[name]/index.js",
+        chunkFileNames: "[name]/[hash].js",
         globals: {
           zod: "zod",
         },
       },
-      external: ["zod"],
     },
   },
 });
