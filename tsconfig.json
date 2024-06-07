@@ -15,7 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "declarationDir": "./declarations"
+    "declarationDir": "./dist/types"
   },
   "include": ["src"]
 }
