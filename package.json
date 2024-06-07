@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "exit 0",
-    "build": "tsc",
+    "build": "vite build",
     "release": "standard-version"
   },
   "author": "",
@@ -29,6 +29,7 @@
     }
   },
   "dependencies": {
+    "vite": "^5.2.12",
     "zod": "^3.23.8"
   },
   "exports": {
