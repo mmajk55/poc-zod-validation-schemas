@@ -2,17 +2,15 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import { execSync } from "child_process";
 import packageJson from "./package.json";
+import schemaVersion from "./schemaVersion.json";
 
 // Run the version script and get the updated schema version
-const schemaVersion = execSync("node ./updateSchemaVersion.js", {
-  encoding: "utf8",
-}).trim();
-const schemaVersionNumber = parseInt(schemaVersion, 10);
+execSync("node ./updateSchemaVersion.js");
 
 export default defineConfig({
   define: {
     PACKAGE_VERSION: JSON.stringify(packageJson.version),
-    SCHEMA_VERSION: JSON.stringify(schemaVersion),
+    SCHEMA_VERSION: schemaVersion.version,
   },
   build: {
     target: "ES2016",

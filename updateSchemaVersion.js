@@ -21,7 +21,6 @@ async function main() {
     fs.writeJsonSync(versionPath, versionInfo);
   }
 
-  console.log(versionInfo.version);
   return versionInfo.version;
 }
 
