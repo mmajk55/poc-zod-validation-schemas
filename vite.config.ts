@@ -5,7 +5,9 @@ import packageJson from "./package.json";
 import schemaVersion from "./schemaVersion.json";
 
 // Run the version script and get the updated schema version
-execSync("node ./updateSchemaVersion.js");
+const version = execSync("node ./updateSchemaVersion.js");
+
+console.log("VERSION", version);
 
 export default defineConfig({
   define: {

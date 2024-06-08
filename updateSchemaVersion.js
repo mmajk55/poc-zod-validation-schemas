@@ -6,26 +6,37 @@ const SCHEMA_DIR = "src/schemas";
 const VERSION_FILE = "schemaVersion.json";
 
 async function main() {
+  // Fetch latest main branch state
+  await git.fetch();
+
+  // Check for differences in the schemas directory between current HEAD and main branch
   const hasChanges = await git
-    .diff(["--name-only", "HEAD", SCHEMA_DIR])
+    .diff(["--name-only", "origin/main", SCHEMA_DIR])
     .then((result) => result.trim() !== "");
+
   const versionPath = path.join(__dirname, VERSION_FILE);
 
   let versionInfo = { version: 1 };
   if (fs.existsSync(versionPath)) {
-    versionInfo = fs.readJsonSync(versionPath);
+    versionInfo = await fs.readJson(versionPath);
   }
 
   if (hasChanges) {
     versionInfo.version += 1;
-    fs.writeJsonSync(versionPath, versionInfo);
+    await fs.writeJson(versionPath, versionInfo);
+    await git.add(versionPath);
+    await git.commit(`Update schema version to ${versionInfo.version}`);
+    // Optionally push changes
+    // await git.push();
   }
 
+  console.log(`Current schema version: ${versionInfo.version}`);
   return versionInfo.version;
 }
 
 main()
   .then((version) => {
+    console.log(`Version updated to ${version}`);
     process.exit(0);
   })
   .catch((err) => {
