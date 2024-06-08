@@ -40,7 +40,7 @@ jobs:
         id: changed-files
       - run: npm install
       - name: Set Version Manually
-        run: npm version ${{ github.event.inputs.version }} --no-git-tag-version
+        run: npm version ${{ github.event.inputs.version }}
       - name: Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
