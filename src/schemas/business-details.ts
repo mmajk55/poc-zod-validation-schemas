@@ -4,7 +4,6 @@ export const businessDetailsSchema = z
   .object({
     account_purpose: z.enum([
       "Business expenses",
-      "Payroll",
       "Receive funds from clients",
     ]),
     selected_products: z.array(z.enum(["SEPA", "SEPA instant"])),
