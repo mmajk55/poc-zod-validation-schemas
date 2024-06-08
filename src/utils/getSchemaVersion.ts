@@ -1,3 +1,5 @@
+import schemaVersion from "../../schemaVersion.json";
+
 export function getSchemaVersion() {
-  return SCHEMA_VERSION;
+  return schemaVersion.version;
 }
