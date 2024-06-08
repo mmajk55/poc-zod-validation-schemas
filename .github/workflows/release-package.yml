@@ -48,17 +48,14 @@ jobs:
           branch: main
           commit_user_name: GitHub Action
           commit_user_email: action@github.com
-          file_pattern: poc-zod-validation-schemas/package.json
       - run: npm run build
       - name: Auto Commit Schema Version Bump
-        if: contains(steps.changed-files.outputs.all_changed_files, 'poc-zod-validation-schemas/schemas')
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Bump schemas version to ${{ github.event.inputs.version }}
           branch: main
           commit_user_name: GitHub Action
           commit_user_email: action@github.com
-          file_pattern: poc-zod-validation-schemas/schemaVersion.json
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
