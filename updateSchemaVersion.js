@@ -25,7 +25,6 @@ async function main() {
     await fs.writeJson(versionPath, versionInfo);
   }
 
-  console.log(`Current schema version: ${versionInfo.version}`);
   return versionInfo.version;
 }
 
