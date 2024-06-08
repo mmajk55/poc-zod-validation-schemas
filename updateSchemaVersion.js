@@ -6,7 +6,6 @@ const SCHEMA_DIR = "src/schemas";
 const VERSION_FILE = "schemaVersion.json";
 
 async function main() {
-  // Fetch latest main branch state
   await git.fetch();
 
   // Check for differences in the schemas directory between current HEAD and main branch
@@ -24,10 +23,6 @@ async function main() {
   if (hasChanges) {
     versionInfo.version += 1;
     await fs.writeJson(versionPath, versionInfo);
-    await git.add(versionPath);
-    await git.commit(`Update schema version to ${versionInfo.version}`);
-    // Optionally push changes
-    // await git.push();
   }
 
   console.log(`Current schema version: ${versionInfo.version}`);
