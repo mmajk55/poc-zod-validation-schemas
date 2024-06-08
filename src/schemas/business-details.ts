@@ -8,7 +8,7 @@ export const businessDetailsSchema = z
       "Receive funds from clients",
     ]),
     selected_products: z.array(z.enum(["SEPA", "SEPA instant"])),
-    selected_currencies: z.array(z.enum(["GBP", "USD", "AED"])),
+    selected_currencies: z.array(z.enum(["GBP", "AED"])),
     business_activity: z.string(),
     employees_count: z.enum(["1-10", "11-50", "51-200"]),
     company_trading_name: z.string(),
