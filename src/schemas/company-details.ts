@@ -3,7 +3,7 @@ import { addressSchema, bankSchema } from "./shared";
 
 export const companySchema = z
   .object({
-    company_legal_type: z.enum(["Public", "Private", "Trust"]),
+    company_legal_type: z.enum(["Public", "Private", "Trust", "Test"]),
     company_registration_number: z.string(),
     country_of_incorporation: z.string(),
     date_of_incorporation: z.string(),
