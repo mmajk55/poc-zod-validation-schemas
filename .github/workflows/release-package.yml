@@ -35,6 +35,11 @@ jobs:
         with:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+
       - name: Get changed files
         uses: tj-actions/changed-files@v44.4.0
         id: changed-files
